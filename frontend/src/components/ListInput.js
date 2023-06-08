@@ -24,7 +24,7 @@ function ListInput(props){
 }
 
 function CreateInput(formtype, setInputValue, inputValue, placeholdertext){
-    if(formtype == "textarea"){
+    if(formtype === "textarea"){
         return(<textarea placeholder={placeholdertext} value = {inputValue} className="add-input" onChange={e => setInputValue(e.target.value)}/>)
     }
     else{
@@ -34,10 +34,12 @@ function CreateInput(formtype, setInputValue, inputValue, placeholdertext){
 
 function AddInputValue(e, props, inputValue, setInputValue){
     e.preventDefault()
-    let temp = {...props.data}
-    temp[props.field].push(inputValue)
-    props.set(temp)
-    setInputValue("")
+    if(/\S/.test(inputValue)){
+        let temp = {...props.data}
+        temp[props.field].push(inputValue)
+        props.set(temp)
+        setInputValue("")
+    }
 }
 
 function CreateList(props){

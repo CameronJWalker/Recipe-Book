@@ -1,7 +1,7 @@
 import React from "react"
 import NavBar from "../components/NavBar"
 import Category from "../components/Category"
-import {useEffect, useState, useContext} from "react"
+import {useEffect, useState} from "react"
 
 
 function CategoryPage(){

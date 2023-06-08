@@ -18,7 +18,6 @@ function RecipePage(){
             setData(r)
         })
     }, []);
-
     return(
         <>
             <NavBar/>
